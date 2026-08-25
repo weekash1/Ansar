@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us – Glasgow ANSAR</title>
+  <link rel="stylesheet" href="styles2.css" />
+
+  <style>
+    /* Sending overlay */
+    #sendingOverlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 28px;
+      font-weight: 700;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+    }
+
+    #sendingOverlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* Spinner */
+    .spinner {
+      border: 4px solid rgba(255,255,255,0.3);
+      border-top: 4px solid var(--pink);
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      animation: spin 0.9s linear infinite;
+      margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Validation error text */
+    .error {
+      color: #ff6b6b;
+      font-size: 14px;
+      margin-top: -10px;
+      margin-bottom: 5px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SENDING OVERLAY -->
+  <div id="sendingOverlay">
+    <div style="text-align:center;">
+      <div class="spinner"></div>
+      Sending your message...
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a class="logo" href="index2.html">
+      <img src="assets/ansar_logo-modified.png" alt="Glasgow ANSAR logo" style="width: 100px; height: 100px; object-fit: contain;">
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="about.html">About Us</a>
+      <a href="programmes.html">Our Programmes</a>
+      <a href="global.html">Global Girls Fund</a>
+      <a href="involved.html">Get Involved</a>
+      <a href="#news">News</a>
+      <a href="contact_us.html">Contact</a>
+    </nav>
+
+    <a class="btn btn-pink" href="https://www.launchgood.com/v4/campaign/support_glasgow_ansar__building_stronger_communities_through_sport__arts?src=internal_search_discover_glasgow%20ansar">Donate</a>
+  </header>
+
+
+  <main>
+
+    <!-- CONTACT PAGE HEADER -->
+    <section class="hero" style="
+      background: var(--navy);
+      grid-template-columns: 1fr 1fr;
+      padding-top: 180px;
+      padding-bottom: 120px;
+    ">
+      <div class="hero-copy" style="max-width: 520px;">
+        <h1>Contact <span>Us</span></h1>
+        <p class="script">We’re Here to Help</p>
+        <p>
+          Whether you're looking to volunteer, partner with us, join a programme, or simply ask a question,
+          we’d love to hear from you.
+        </p>
+      </div>
+
+      <!-- RIGHT SIDE FORM -->
+      <div style="
+        background:#082742;
+        padding:40px;
+        border-radius:12px;
+        box-shadow:0 10px 30px rgba(0,0,0,0.25);
+      ">
+        <form id="contactForm" action="send_email.php" method="POST" style="display:flex; flex-direction:column; gap:18px;">
+
+          <!-- Honeypot (hidden) -->
+          <input type="text" name="website" id="website" style="display:none !important;">
+
+          <input type="text" name="name" id="name" placeholder="Your Name" required
+            style="padding:14px; border-radius:8px; border:none; font-size:16px;">
+          <div class="error" id="nameError">Please enter your name</div>
+
+          <input type="email" name="email" id="email" placeholder="Your Email" required
+            style="padding:14px; border-radius:8px; border:none; font-size:16px;">
+          <div class="error" id="emailError">Please enter a valid email</div>
+
+          <input type="text" name="subject" id="subject" placeholder="Subject" required
+            style="padding:14px; border-radius:8px; border:none; font-size:16px;">
+          <div class="error" id="subjectError">Please enter a subject</div>
+
+          <select name="query_type" id="query_type" required
+            style="padding:14px; border-radius:8px; border:none; font-size:16px; background:#fff; color:#000;">
+            <option value="" disabled selected>Select Query Type</option>
+            <option value="Participate">Participate</option>
+            <option value="Volunteer">Volunteer</option>
+            <option value="Partner">Partner</option>
+          </select>
+          <div class="error" id="queryTypeError">Please select a query type</div>
+
+          <textarea name="message" id="message" placeholder="Your Message" rows="6" required
+            style="padding:14px; border-radius:8px; border:none; font-size:16px;"></textarea>
+          <div class="error" id="messageError">Please enter a message</div>
+
+          <button type="submit" class="btn btn-pink" style="width:100%; margin-top:10px;">
+            Send Message
+          </button>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="footer">
+    <a href="index2.html"><img src="assets/ansar_logo-modified.png" alt="Glasgow ANSAR logo" style="width: 60px; height: 60px; object-fit: contain;"></a>
+
+    <div>
+      <strong>Get in touch</strong><br />
+      <a href="mailto:info@glasgowansar.com">info@glasgowansar.com</a>
+    </div>
+
+    <div>
+      <strong>Follow us</strong><br />
+      <a href="https://www.facebook.com/ANSARGlasgow">Facebook</a> · <a href = "https://www.instagram.com/ansarglasgow">Instagram</a> 
+    </div>
+
+    <div>
+      <strong>Registered Charity</strong><br />
+      SC050814
+    </div>
+  </footer>
+
+  <!-- INLINE VALIDATION + OVERLAY SCRIPT -->
+  <script>
+    const form = document.getElementById("contactForm");
+    const overlay = document.getElementById("sendingOverlay");
+
+    form.addEventListener("submit", function(e) {
+      let valid = true;
+
+      // Honeypot check
+      if (document.getElementById("website").value !== "") {
+        e.preventDefault();
+        return false;
+      }
+
+      // Validation rules
+      const fields = [
+        { id: "name", error: "nameError" },
+        { id: "email", error: "emailError", email: true },
+        { id: "subject", error: "subjectError" },
+        { id: "query_type", error: "queryTypeError" },
+        { id: "message", error: "messageError" }
+      ];
+
+      fields.forEach(f => {
+        const input = document.getElementById(f.id);
+        const error = document.getElementById(f.error);
+
+        if (!input.value.trim() || (f.email && !input.value.includes("@"))) {
+          error.style.display = "block";
+          valid = false;
+        } else {
+          error.style.display = "none";
+        }
+      });
+
+      if (!valid) {
+        e.preventDefault();
+        return false;
+      }
+
+      // Show sending overlay
+      overlay.classList.add("active");
+    });
+  </script>
+
+</body>
+</html>

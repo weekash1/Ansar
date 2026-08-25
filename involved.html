@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Get Involved – Glasgow ANSAR</title>
+  <link rel="stylesheet" href="styles2.css" />
+</head>
+
+<body>
+
+  <!-- HEADER (identical to index page) -->
+  <header class="site-header">
+    <a class="logo" href="index2.html">
+      <img src="assets/ansar_logo-modified.png" alt="Glasgow ANSAR logo" style="width: 100px; height: 100px; object-fit: contain;">
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="about.html">About Us</a>
+      <a href="programmes.html">Our Programmes</a>
+      <a href="global-girls-fund.html">Global Girls Fund</a>
+      <a href="involved.html">Get Involved</a>
+      <a href="#news">News</a>
+      <a href="contact_us.html">Contact</a>
+    </nav>
+
+    <a class="btn btn-pink" href="https://www.launchgood.com/v4/campaign/support_glasgow_ansar__building_stronger_communities_through_sport__arts?src=internal_search_discover_glasgow%20ansar">Donate</a>
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" style="
+      background:
+        linear-gradient(90deg, #061d34 0%, #061d34 55%, transparent 80%),
+        url('assets/get-involved-hero-placeholder.jpg') center right/cover no-repeat;
+    ">
+      <div class="hero-copy">
+        <h1>Get <span>Involved</span></h1>
+        <p class="script">Join the ANSAR Community</p>
+        <p>
+          There are many ways to support ANSAR and become part of our growing community.
+          Your involvement helps us create more opportunities for children, young people,
+          women, and families.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="split-section">
+      <div class="split-copy">
+        <p class="eyebrow">Why Get Involved?</p>
+        <h2>Be Part of <span>Something Meaningful</span></h2>
+
+        <p>
+          Whether you want to volunteer, participate in activities, partner with us, or support
+          our work through fundraising, your involvement helps us build stronger, healthier,
+          and more connected communities.
+        </p>
+      </div>
+
+      <div class="split-media">
+        <img src="assets/get-involved-intro-placeholder.jpg" alt="Community involvement placeholder">
+        <blockquote>
+          “Together, we create opportunities that change lives.”
+        </blockquote>
+      </div>
+    </section>
+
+
+    <!-- VOLUNTEER -->
+    <section class="split-section" style="background:#f7f9fc;">
+      <div class="split-media">
+        <img src="assets/get-involved-volunteer-placeholder.jpg" alt="Volunteer with ANSAR">
+      </div>
+
+      <div class="split-copy">
+        <p class="eyebrow">Volunteer</p>
+        <h2>Make a <span>Positive Difference</span></h2>
+
+        <p>
+          Our volunteers are at the heart of everything we do. Volunteering with ANSAR is a great
+          way to gain new skills, meet new people, support your local community, and develop
+          confidence and leadership skills.
+        </p>
+
+        <p>We welcome volunteers of all ages and backgrounds.</p>
+
+        <a class="btn btn-pink" href="contact_us.html">Become a Volunteer →</a>
+      </div>
+    </section>
+
+
+    <!-- JOIN A PROGRAMME -->
+<section class="split-section">
+  <div class="split-copy">
+    <p class="eyebrow">Join a Programme</p>
+    <h2>Find Your <span>Next Opportunity</span></h2>
+
+    <p>
+      From sport and physical activity to arts, wellbeing, and leadership opportunities,
+      there is something for everyone. Whether you’re looking to get active, learn a new
+      skill, meet new people, or support your wellbeing, we’d love to welcome you.
+    </p>
+
+    <!--a class="btn btn-pink" href="programmes.html">View Our Programmes →</a-->
+  </div>
+
+  <div class="split-media" style="display:flex; flex-direction:column; justify-content:center; overflow:visible; position:relative;">
+
+    <style>
+      .day-cell {
+        position: relative;
+        cursor: pointer;
+        overflow: visible;
+      }
+
+      .popup-info {
+        position: absolute;
+        top: calc(100% + 8px); /* below the cell */
+        left: 50%;
+        transform: translateX(-50%);
+        background: #e6e6e6;
+        color: #061d34;
+        padding: 16px 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        font-size: 16px;
+        width: 240px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .25s ease, transform .25s ease;
+        z-index: 9999;
+        white-space: normal;
+      }
+
+      .day-cell:hover .popup-info {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+      }
+      .vertical-text {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        text-align: center;
+        font-weight: 700;
+        font-size: 16px;
+        color: white;
+        letter-spacing: 2px;
+      }
+    </style>
+
+<table style="
+  width:100%;
+  border-collapse:collapse;
+  background:#082742;
+  color:white;
+  border-radius:12px;
+  overflow:visible;
+  font-size:18px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+">
+
+  <thead>
+    <tr style="background:var(--pink); color:#061d34; font-weight:700;">
+      <th style="padding:16px;">Sport</th>
+      <th style="padding:16px;">Monday</th>
+      <th style="padding:16px;">Tuesday</th>
+      <th style="padding:16px;">Wednesday</th>
+      <th style="padding:16px;">Thursday</th>
+      <th style="padding:16px;">Friday</th>
+      <th style="padding:16px;">Saturday</th>
+      <th style="padding:16px;">Sunday</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <!-- ========================= -->
+    <!-- ROW 1 — FOOTBALL          -->
+    <!-- ========================= -->
+    <tr>
+
+      <!-- FOOTBALL ICON -->
+        <td style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+          <div class="vertical-text">FOOTBALL</div>
+        </td>
+
+      <!-- MONDAY -->
+      <td class="day-cell" style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+        <a href="mailto:kashif@glasgowansar.com" class="btn btn-pink" style="font-size:16px; padding:10px 18px;">
+          Football – 2014 team training
+        </a>
+        <div class="popup-info">
+          <strong>2014 Team Training</strong><br><br>
+          • Time: 18:00 – 19:00<br>
+          • Location: Palace of Arts<br><br>
+          Click the button to enquire.
+        </div>
+      </td>
+
+      <!-- TUESDAY -->
+      <td class="day-cell" style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+        <a href="mailto:kashif@glasgowansar.com" class="btn btn-pink" style="font-size:16px; padding:10px 18px;">
+          Football – 2016 & 2017 team training
+        </a>
+        <div class="popup-info">
+          <strong>2016 & 2017 Team Training</strong><br><br>
+          • Time: 19:00 – 20:00<br>
+          • Location: Toryglen<br><br>
+          Click the button to enquire.
+        </div>
+      </td>
+
+      <!-- WEDNESDAY -->
+      <td class="day-cell" style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+        —
+        <div class="popup-info">No sessions scheduled on Wednesday.</div>
+      </td>
+
+      <!-- THURSDAY -->
+      <td class="day-cell" style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+        <a href="mailto:kashif@glasgowansar.com" class="btn btn-pink" style="font-size:16px; padding:10px 18px;">
+          Football – 2014 team training
+        </a>
+        <div class="popup-info">
+          <strong>2014 Team Training</strong><br><br>
+          • Time: 18:00 – 19:00<br>
+          • Location: Toryglen<br><br>
+          Click the button to enquire.
+        </div>
+      </td>
+
+      <!-- FRIDAY -->
+      <td class="day-cell" style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+        —
+        <div class="popup-info">No sessions scheduled on Friday.</div>
+      </td>
+
+      <!-- SATURDAY -->
+      <td class="day-cell" style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+        —
+        <div class="popup-info">No sessions scheduled on Saturday.</div>
+      </td>
+
+      <!-- SUNDAY -->
+      <td class="day-cell" style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+        <a href="https://glasgow-ansar.classforkids.io/" class="btn btn-pink" style="font-size:16px; padding:10px 18px;">
+          Football – Sunday Academy
+        </a>
+        <div class="popup-info">
+          <strong>Football Coaching</strong><br><br>
+          • Ages: 5–15<br>
+          • Time: 11:00 – 12:00<br>
+          • Location: Goals South, Shawlands<br><br>
+          Click the button to enquire.
+        </div>
+      </td>
+
+    </tr>
+
+    <!-- ========================= -->
+    <!-- ROW 2 — NETBALL           -->
+    <!-- ========================= -->
+    <tr>
+
+      <!-- NETBALL ICON -->
+      <td style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+          <div class="vertical-text">NETBALL</div>
+        </td>
+
+      
+      <!-- ALL NETBALL CELLS EMPTY -->
+      <td class="day-cell" style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+        —
+        <div class="popup-info">No sessions scheduled.</div>
+      </td>
+
+      <td class="day-cell" style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+        —
+        <div class="popup-info">No sessions scheduled.</div>
+      </td>
+
+      <td class="day-cell" style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+        —
+        <div class="popup-info">No sessions scheduled.</div>
+      </td>
+
+      <td class="day-cell" style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+        —
+        <div class="popup-info">No sessions scheduled.</div>
+      </td>
+
+      <td class="day-cell" style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+        —
+        <div class="popup-info">No sessions scheduled.</div>
+      </td>
+
+      <td class="day-cell" style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+        —
+        <div class="popup-info">No sessions scheduled.</div>
+      </td>
+
+      <td class="day-cell" style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+        —
+        <div class="popup-info">No sessions scheduled.</div>
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+  </div>
+</section>
+
+
+
+    <!-- PARTNER WITH US -->
+    <section class="split-section" style="background:#f7f9fc;">
+      <div class="split-media">
+        <img src="assets/get-involved-partner-placeholder.jpg" alt="Partner with ANSAR">
+      </div>
+
+      <div class="split-copy">
+        <p class="eyebrow">Partner With Us</p>
+        <h2>Create <span>Lasting Impact</span></h2>
+
+        <p>
+          We work closely with schools, community organisations, businesses, public sector
+          partners, and funders to create meaningful opportunities and lasting impact.
+        </p>
+
+        <a class="btn btn-pink" href="contact_us.html">Partner With Us →</a>
+      </div>
+    </section>
+
+
+    <!-- FUNDRAISE -->
+    <section class="split-section">
+      <div class="split-copy">
+        <p class="eyebrow">Fundraise</p>
+        <h2>Support Our <span>Community Work</span></h2>
+
+        <p>
+          Every pound raised helps us reach more people and provide life-changing opportunities
+          across our communities.
+        </p>
+
+        <ul style="line-height:1.7; font-size:18px;">
+          <li>Organising a fundraising event</li>
+          <li>Taking on a challenge</li>
+          <li>Making a donation</li>
+          <li>Sponsoring a programme</li>
+          <li>Supporting the Global Girls Fund</li>
+        </ul>
+
+        <a class="btn btn-pink" href="contact_us.html">Support Our Work →</a>
+      </div>
+
+      <div class="split-media">
+        <img src="assets/get-involved-fundraise-placeholder.jpg" alt="Fundraising activities">
+      </div>
+    </section>
+
+
+<!-- CORPORATE SUPPORT -->
+<section style="background:#f7f9fc; padding:80px 0; width:100%;">
+  <div style="
+      max-width:900px;
+      margin:0 auto;
+      text-align:center;
+      padding:0 20px;
+      color:#061d34;
+  ">
+    <p class="eyebrow" style="color:#FF4F9A; margin-bottom:10px;">Corporate Support</p>
+
+    <h2 style="margin:0 0 20px 0; font-size:36px; font-weight:700;">
+      Partner for <span style="color:#FF4F9A;">Social Impact</span>
+    </h2>
+
+    <h2>Partner for <span>Social Impact</span></h2>
+
+    <p style="margin:0 0 30px 0; font-size:18px; line-height:1.6;">
+      Businesses can support ANSAR through sponsorship, employee volunteering,
+      fundraising initiatives, and strategic partnerships.
+    </p>
+
+    <a class="btn btn-pink" href="contact_us.html">Become a Corporate Partner →</a>
+  </div>
+</section>
+
+
+
+
+
+
+    <!-- STAY CONNECTED -->
+    <section class="involved" style="border-top:2px solid var(--pink); border-bottom:2px solid var(--pink);">
+      <div>
+        <h2>Stay <span>Connected</span></h2>
+        <p>
+          Follow us on social media, subscribe to our newsletter, and keep up to date with our
+          latest programmes, events, and opportunities.
+        </p>
+      </div>
+
+      <article>
+        <h3>Follow Us</h3>
+        <p>Stay updated with our latest news and activities.</p>
+        <a href="#contact">Find Us Online →</a>
+      </article>
+
+      <article>
+        <h3>Newsletter</h3>
+        <p>Receive updates straight to your inbox.</p>
+        <a href="contact_us.html">Subscribe →</a>
+      </article>
+
+      <article>
+        <h3>Contact Us</h3>
+        <p>We’d love for you to be part of the ANSAR journey.</p>
+        <a href="contact_us.html">Get In Touch →</a>
+      </article>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer id="contact" class="footer">
+    <a href="index2.html"><img src="assets/ansar_logo-modified.png" alt="Glasgow ANSAR logo" style="width: 60px; height: 60px; object-fit: contain;"></a>
+
+    <div>
+      <strong>Get in touch</strong><br />
+      <a href="mailto:info@glasgowansar.com">info@glasgowansar.com</a>
+    </div>
+
+    <div>
+      <strong>Follow us</strong><br />
+      <a href="https://www.facebook.com/ANSARGlasgow">Facebook</a> · <a href = "https://www.instagram.com/ansarglasgow">Instagram</a> 
+    </div>
+
+    <div>
+      <strong>Registered Charity</strong><br />
+      SC050814
+    </div>
+  </footer>
+
+</body>
+</html>

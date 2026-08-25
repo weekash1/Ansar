@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Message Sent – Glasgow ANSAR</title>
+  <link rel="stylesheet" href="styles2.css" />
+
+  <style>
+    .success-wrapper {
+      text-align: center;
+      padding: 140px 5vw;
+      color: #fff;
+    }
+
+    .success-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 6px solid var(--pink);
+      margin: 0 auto 30px;
+      position: relative;
+      opacity: 0;
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    .success-tick {
+      width: 60px;
+      height: 30px;
+      border-left: 6px solid var(--pink);
+      border-bottom: 6px solid var(--pink);
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 32px;
+      left: 30px;
+      opacity: 0;
+      animation: drawTick 0.6s ease 0.4s forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes drawTick {
+      from { opacity: 0; transform: scale(0.5) rotate(-45deg); }
+      to { opacity: 1; transform: scale(1) rotate(-45deg); }
+    }
+
+    .success-message {
+      opacity: 0;
+      animation: fadeIn 0.8s ease 0.8s forwards;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="success-wrapper">
+
+    <div class="success-circle">
+      <div class="success-tick"></div>
+    </div>
+
+    <div class="success-message">
+      <h1 style="font-size:52px; font-weight:900; margin-bottom:20px;">
+        Your Request Has Been Sent
+      </h1>
+
+      <p style="font-size:20px; max-width:600px; margin:0 auto 40px;">
+        Thank you for getting in touch. Someone from the ANSAR team will contact you shortly.
+      </p>
+
+      <a class="btn btn-pink" href="index2.html">Return to Home</a>
+    </div>
+
+  </main>
+
+</body>
+</html>
