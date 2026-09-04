@@ -11,20 +11,24 @@
 
   <!-- HEADER (identical to index page) -->
   <header class="site-header">
-    <a class="logo" href="index2.html">
+    <a class="logo" href="index.html">
       <img src="assets/ansar_logo-modified.png" alt="Glasgow ANSAR logo" style="width: 100px; height: 100px; object-fit: contain;">
     </a>
 
-    <nav class="nav" aria-label="Main navigation">
+    <nav class="nav" aria-label="Main navigation" id="siteNav">
       <a href="about.html">About Us</a>
       <a href="programmes.html">Our Programmes</a>
       <a href="global.html">Global Girls Fund</a>
       <a href="involved.html">Get Involved</a>
-      <a href="#news">News</a>
       <a href="contact_us.html">Contact</a>
     </nav>
 
-    <a class="btn btn-pink" href="https://www.launchgood.com/v4/campaign/support_glasgow_ansar__building_stronger_communities_through_sport__arts?src=internal_search_discover_glasgow%20ansar">Donate</a>
+    <div class="header-actions">
+      <a class="btn btn-pink" href="https://www.launchgood.com/v4/campaign/support_glasgow_ansar__building_stronger_communities_through_sport__arts?src=internal_search_discover_glasgow%20ansar">Donate</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
 
@@ -243,7 +247,7 @@
 
   <!-- FOOTER -->
   <footer id="contact" class="footer">
-    <a href="index2.html"><img src="assets/ansar_logo-modified.png" alt="Glasgow ANSAR logo" style="width: 60px; height: 60px; object-fit: contain;"></a>
+    <a href="index.html"><img src="assets/ansar_logo-modified.png" alt="Glasgow ANSAR logo" style="width: 60px; height: 60px; object-fit: contain;"></a>
 
     <div>
       <strong>Get in touch</strong><br />
@@ -261,5 +265,6 @@
     </div>
   </footer>
 
+  <script src="assets/main.js" defer></script>
 </body>
 </html>

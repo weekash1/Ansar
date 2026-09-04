@@ -11,20 +11,24 @@
 
   <!-- HEADER (identical to index page) -->
   <header class="site-header">
-    <a class="logo" href="index2.html">
+    <a class="logo" href="index.html">
       <img src="assets/ansar_logo-modified.png" alt="Glasgow ANSAR logo" style="width: 100px; height: 100px; object-fit: contain;">
     </a>
 
-    <nav class="nav" aria-label="Main navigation">
+    <nav class="nav" aria-label="Main navigation" id="siteNav">
       <a href="about.html">About Us</a>
       <a href="programmes.html">Our Programmes</a>
-      <a href="global-girls-fund.html">Global Girls Fund</a>
+      <a href="global.html">Global Girls Fund</a>
       <a href="involved.html">Get Involved</a>
-      <a href="#news">News</a>
       <a href="contact_us.html">Contact</a>
     </nav>
 
-    <a class="btn btn-pink" href="https://www.launchgood.com/v4/campaign/support_glasgow_ansar__building_stronger_communities_through_sport__arts?src=internal_search_discover_glasgow%20ansar">Donate</a>
+    <div class="header-actions">
+      <a class="btn btn-pink" href="https://www.launchgood.com/v4/campaign/support_glasgow_ansar__building_stronger_communities_through_sport__arts?src=internal_search_discover_glasgow%20ansar">Donate</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
 
@@ -62,7 +66,7 @@
       </div>
 
       <div class="split-media">
-        <img src="assets/get-involved-intro-placeholder.jpg" alt="Community involvement placeholder">
+        <img src="assets/get-involved-intro-placeholder.jpg" alt="Community involvement placeholder" class="intro-photo">
         <blockquote>
           “Together, we create opportunities that change lives.”
         </blockquote>
@@ -128,7 +132,7 @@
         border-radius: 10px;
         box-shadow: 0 10px 25px rgba(0,0,0,0.25);
         font-size: 16px;
-        width: 240px;
+        width: min(240px, 80vw);
         opacity: 0;
         pointer-events: none;
         transition: opacity .25s ease, transform .25s ease;
@@ -136,7 +140,8 @@
         white-space: normal;
       }
 
-      .day-cell:hover .popup-info {
+      .day-cell:hover .popup-info,
+      .day-cell.popup-open .popup-info {
         opacity: 1;
         pointer-events: auto;
         transform: translateX(-50%) translateY(0);
@@ -150,8 +155,70 @@
         color: white;
         letter-spacing: 2px;
       }
+
+      /* Mobile-specific schedule cards (replace the table below 900px) */
+      .schedule-cards { display: none; }
+
+      @media (max-width: 900px) {
+        .table-scroll { display: none; }
+
+        /* Tighter, better-framed crop for the coaches photo under
+           "Be Part of Something Meaningful" — the default center crop
+           left too much of the car park in view and crowded the subjects. */
+        .intro-photo {
+          max-height: 300px;
+          object-position: center 15%;
+        }
+
+        .schedule-cards {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        .schedule-card {
+          background: #082742;
+          border-radius: 12px;
+          padding: 20px;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        }
+
+        .schedule-day {
+          display: inline-block;
+          background: var(--pink);
+          color: #061d34;
+          font-weight: 800;
+          font-size: 12px;
+          text-transform: uppercase;
+          letter-spacing: .6px;
+          padding: 4px 10px;
+          border-radius: 6px;
+          margin-bottom: 10px;
+        }
+
+        .schedule-card h4 {
+          margin: 0 0 6px;
+          font-size: 18px;
+          color: #fff;
+        }
+
+        .schedule-card p {
+          margin: 0 0 16px;
+          font-size: 15px;
+          color: #cfe0f0;
+        }
+
+        .schedule-card .btn {
+          width: 100%;
+        }
+
+        .schedule-card--empty p {
+          margin-bottom: 0;
+        }
+      }
     </style>
 
+<div class="table-scroll">
 <table style="
   width:100%;
   border-collapse:collapse;
@@ -313,6 +380,44 @@
 
   </tbody>
 </table>
+</div>
+
+<div class="schedule-cards">
+
+  <div class="schedule-card">
+    <span class="schedule-day">Monday</span>
+    <h4>Football – 2014 Team Training</h4>
+    <p>18:00 – 19:00 · Palace of Arts</p>
+    <a href="mailto:kashif@glasgowansar.com" class="btn btn-pink">Enquire →</a>
+  </div>
+
+  <div class="schedule-card">
+    <span class="schedule-day">Tuesday</span>
+    <h4>Football – 2016 &amp; 2017 Team Training</h4>
+    <p>19:00 – 20:00 · Toryglen</p>
+    <a href="mailto:kashif@glasgowansar.com" class="btn btn-pink">Enquire →</a>
+  </div>
+
+  <div class="schedule-card">
+    <span class="schedule-day">Thursday</span>
+    <h4>Football – 2014 Team Training</h4>
+    <p>18:00 – 19:00 · Toryglen</p>
+    <a href="mailto:kashif@glasgowansar.com" class="btn btn-pink">Enquire →</a>
+  </div>
+
+  <div class="schedule-card">
+    <span class="schedule-day">Sunday</span>
+    <h4>Football – Sunday Academy</h4>
+    <p>Ages 5–15 · 11:00 – 12:00 · Goals South, Shawlands</p>
+    <a href="https://glasgow-ansar.classforkids.io/" class="btn btn-pink">Enquire →</a>
+  </div>
+
+  <div class="schedule-card schedule-card--empty">
+    <h4>Netball</h4>
+    <p>No sessions currently scheduled — check back soon.</p>
+  </div>
+
+</div>
 
 
 
@@ -434,7 +539,7 @@
 
   <!-- FOOTER -->
   <footer id="contact" class="footer">
-    <a href="index2.html"><img src="assets/ansar_logo-modified.png" alt="Glasgow ANSAR logo" style="width: 60px; height: 60px; object-fit: contain;"></a>
+    <a href="index.html"><img src="assets/ansar_logo-modified.png" alt="Glasgow ANSAR logo" style="width: 60px; height: 60px; object-fit: contain;"></a>
 
     <div>
       <strong>Get in touch</strong><br />
@@ -452,5 +557,6 @@
     </div>
   </footer>
 
+  <script src="assets/main.js" defer></script>
 </body>
 </html>
